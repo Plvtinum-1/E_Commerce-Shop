@@ -42,14 +42,14 @@
     top: 0;
     padding: 15px;
     right: -100%;
-    transition: 1.2s;
+    transition: 0.7s ease-in;
     border: 4px solid white;
     backdrop-filter: blur(5px);
 }
 
 .nav-menu.active {
     right: 0;
-    transition: 1.2s;
+    transition: 0.7s;
 }
 
 .nav-text {
@@ -98,7 +98,7 @@ span {
     margin-left: 16px;
 }
 
-.line {
+.my-line {
     width: 200px;  
     border-top: 1px solid white;
     color: white;

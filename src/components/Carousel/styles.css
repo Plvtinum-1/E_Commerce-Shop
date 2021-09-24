@@ -1,0 +1,40 @@
+/* * {
+    transform: translateX();
+} */
+
+.carous {
+    overflow: hidden;
+}
+
+.inner-carous {
+    white-space: nowrap;
+    transition: transform 0.3s;
+}
+
+.carous-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+    background-color: rgb(187, 150, 150);
+    color: #fff;
+}
+
+.indicators {
+    /* position: absolute; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 261%;
+    z-index: 99;
+}
+
+.icons {
+   font-size: 50px;
+}
+
+.indicators > button {
+    margin: 5px;
+}

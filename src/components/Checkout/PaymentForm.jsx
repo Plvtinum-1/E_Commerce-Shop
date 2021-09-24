@@ -33,7 +33,7 @@ const PaymentForm = ({ checkoutToken, backStep }) => {
           <Typography variant='h6' style={{ margin: '20px 0' }} gutterBottom>Pay With Paypal</Typography>
 
                 <PayPalButton
-                    amount={'0.05'}
+                    amount={checkoutToken.live.subtotal.formatted}
 
                     // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
                     onSuccess={(details, data) => {

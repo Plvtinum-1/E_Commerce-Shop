@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Navbar, Products, Cart, Checkout } from './components';
+import { Navbar, Nav, Products, Cart, Checkout, Categories, Home, ProductDetails } from './components';
 import { commerce } from './lib/commerce';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import MyForm from './components/MyForm/MyForm';
-import Nav from './components/Nav/Nav' 
-import Home from './components/Home/Home'
+import { Switch, Route } from 'react-router-dom';
 
   const App = () => {
     
@@ -46,7 +43,7 @@ import Home from './components/Home/Home'
 
     const fetchCart = async () => {
         const cart = await commerce.cart.retrieve();
-        setCart(cart)
+        setCart(cart);
     }
 
     const handleAddToCart = async (productId, quantity) => {
@@ -73,7 +70,7 @@ import Home from './components/Home/Home'
         fetchProducts();
         fetchByCategory();
         fetchCart();
-        catego()
+        catego();
     }, [])
     
     // const category = async () => {
@@ -84,17 +81,23 @@ import Home from './components/Home/Home'
     //   console.log(retrieve)
     // }
     // category()
-      console.log(Route)
+
+      console.log(categories)
+
       return (
-        <Router>
-          <div>
-            <Nav totalItems={cart.total_items} />
-           
-            <Switch>
-              <Route exact path='/products'>
-              <Products categories={categories} products={products} onAddToCart={handleAddToCart} />
-              </Route>
+        <>  
+          {/* <Nav totalItems={cart.total_items} /> */}        
             
+            <Switch>
+              <Route component='Home' exact path='/'>
+                <Home categories={categories} totalItems={cart.total_items} onAddToCart={handleAddToCart} /> 
+                <Categories /> 
+              </Route>
+
+              <Route exact path='/products'>
+               <Products categories={categories} products={products} onAddToCart={handleAddToCart} />
+              </Route>
+
               <Route exact path='/cart'>
                 <Cart cart={cart} onAddToCartQty={handleUpdateCartQty} onRemoveCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />
               </Route>
@@ -103,24 +106,21 @@ import Home from './components/Home/Home'
                 <Checkout cart={cart} />
               </Route>
 
-              <Route path='/form'>
-                <MyForm pro={pro} />
-              </Route>
-
-              <Route path='/contact'>
+              <Route exact path='/contact'>
                 <h1>Contact Us</h1>
               </Route>
 
-              <Route path='/about'>
+              <Route exact path='/about'>
                 <h1>About Us</h1>
               </Route>
 
-              <Route path='/'>
-                  <Home />
+              <Route exact path='/products/:productId'>
+                <ProductDetails />
               </Route>
+
             </Switch>
-          </div>  
-        </Router> 
+              
+        </> 
       );   
 }
 

@@ -20,7 +20,8 @@ const Nav = ({ totalItems }) => {
               {window.location.pathname !== '/cart' && (
                   <IconButton component={Link} to='/cart' aria-label='Show cart items'>
                     <Badge badgeContent={totalItems} > 
-                      <img className='cart' src="https://res.cloudinary.com/plvtinum/image/upload/v1631979346/ecommerce/cart2_xx2cs7.svg" alt="cart" />
+                      <ShoppingCart />
+                      {/* <img className='cart' src="https://res.cloudinary.com/plvtinum/image/upload/v1631979346/ecommerce/cart2_xx2cs7.svg" alt="cart" /> */}
                     </Badge>
                   </IconButton>
                )}
@@ -45,8 +46,7 @@ const Nav = ({ totalItems }) => {
                           <span>{item.name}</span>
                         </Link>
                       </li>
-                      <hr className='line' />
-
+                      <hr className='my-line' />
                       </>
                     ))}
                 </ul>               

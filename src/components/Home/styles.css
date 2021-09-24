@@ -13,32 +13,34 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-.container {
+
+.my-container-1 {
     width: 100%;
     height: 100vh;
+    /* background-color: burlywood; */
     background-image: linear-gradient(to right, rgba(255, 254, 254, 0) 0%, rgba(248, 197, 197, 0.4) 100%, transparent),
-     url('https://res.cloudinary.com/plvtinum/image/upload/v1631986532/ecommerce/original_oqkiij.jpg');
+     url('https://res.cloudinary.com/plvtinum/image/upload/v1631986532/ecommerce/original_oqkiij.jpg'); 
     background-size: cover;
-    background-position: 70% 47%;
+    background-position: 75% 45%;
     padding: 0 3%;
-    position: absolute;
     transition: 0.4s;
+  
 }
 
-.text {
+.text-1 {
     color: #fff;
     position: absolute;
     top: 35%;
   
 }
 
-.text p {
+.text-1 p {
     font-size: 33px;
     font-weight: 400;
   
 }
 
-.text h1 {
+.text-1 h1 {
     font-family: 'Fredoka One', sans-serif;
     font-size: 120px;
     line-height: 150px;
@@ -56,19 +58,19 @@
     }
 }
 
-.text h4 {
+.text-1 h4 {
     font-size: 28px;
     font-weight: 400;
 }
 
-.text .row {
+.text-1 .my-row-1 {
    display: flex;
    align-items: center;
    flex-wrap: wrap;
    margin-top: 30px;
 }
 
-.text a {
+.text-1 a {
    color: #fff; 
    font-weight: 400;
    font-size: 19px;
@@ -80,18 +82,9 @@
    transition: 0.3s;
 }
 
-.text a:hover
+.text-1 a:hover
 {
   letter-spacing: 9px;
 }
 
-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-}
 
