@@ -1,6 +1,6 @@
-import { Grid, Typography, Button } from '@material-ui/core';
-import Product from '../Product/Product';
-import useStyles from './styles';
+import { Grid, Typography } from '@material-ui/core';
+import Product from './Product';
+import useStyles from './Products';
 
 const Products = ({ products, onAddToCart, categories }) => {
     const classes = useStyles();

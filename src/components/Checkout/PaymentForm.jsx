@@ -1,7 +1,7 @@
 import { Typography, Button, Divider } from '@material-ui/core';
 import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { PayPalButton } from "react-paypal-button-v2";
 import Review from './Review';
 

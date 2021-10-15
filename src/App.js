@@ -1,14 +1,19 @@
 import { useState, useEffect } from 'react';
-import { Navbar, Nav, Products, Cart, Checkout, Categories, Home, ProductDetails } from './components';
+import './App.css'
+import { Products, Cart, Checkout, Home, Navbar } from './components';
+import ProductDetails from './components/pages/ProductDetails/ProductDetails'
 import { commerce } from './lib/commerce';
 import { Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer/Footer'
+import AllProducts from './components/pages/AllProducts/AllProducts';
+import PageNotFound from './components/pages/PageNotFound/PageNotFound';
+
 
   const App = () => {
     
     const [ products, setProducts ] = useState([]);
     const [ categories, setCategories ] = useState([]);
     const [ cart, setCart ] = useState({});
-
     const [ pro, setPro ] = useState({});
 
     const fetchProducts = async () => {
@@ -33,6 +38,7 @@ import { Switch, Route } from 'react-router-dom';
             productsData: products.filter(product => 
               product.categories.find(cat => cat.id === category.id)
             ),
+            
           },
         ]
       }, [])
@@ -73,52 +79,51 @@ import { Switch, Route } from 'react-router-dom';
         catego();
     }, [])
     
-    // const category = async () => {
-    //   const { data } = await commerce.categories.list()
-    //   console.log(data)
-
-    //   const retrieve = await commerce.categories.retrieve(data[0].id)
-    //   console.log(retrieve)
-    // }
-    // category()
-
-      console.log(categories)
 
       return (
-        <>  
-          {/* <Nav totalItems={cart.total_items} /> */}        
-            
+        <>         
+            <Navbar totalItems={cart.total_items} />
+
             <Switch>
-              <Route component='Home' exact path='/'>
-                <Home categories={categories} totalItems={cart.total_items} onAddToCart={handleAddToCart} /> 
-                <Categories /> 
+              <Route exact path='/'>
+                <Home totalItems={cart.total_items} onAddToCart={handleAddToCart} /> 
               </Route>
 
-              <Route exact path='/products'>
-               <Products categories={categories} products={products} onAddToCart={handleAddToCart} />
+              <Route path='/products'>
+                <Products categories={categories} products={products} onAddToCart={handleAddToCart} />
               </Route>
 
-              <Route exact path='/cart'>
+              <Route path='/allproducts'>
+                <AllProducts categories={categories} products={products} onAddToCart={handleAddToCart} />
+              </Route>
+
+              <Route path='/cart'>
                 <Cart cart={cart} onAddToCartQty={handleUpdateCartQty} onRemoveCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />
               </Route>
 
-              <Route exact path='/checkout'>
+              <Route path='/checkout'>
                 <Checkout cart={cart} />
               </Route>
 
-              <Route exact path='/contact'>
+              <Route path='/contact'>
                 <h1>Contact Us</h1>
               </Route>
 
-              <Route exact path='/about'>
+              <Route path='/about'>
                 <h1>About Us</h1>
               </Route>
 
-              <Route exact path='/products/:productId'>
-                <ProductDetails />
+              <Route path='/404'>
+                <PageNotFound />
+              </Route>
+
+              <Route path='/productdetails/:id'> 
+                <ProductDetails onAddToCart={handleAddToCart} products={products} />
               </Route>
 
             </Switch>
+
+            <Footer products={products} />
               
         </> 
       );   

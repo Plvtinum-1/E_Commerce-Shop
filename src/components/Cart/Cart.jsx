@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, Typography, Button, Grid } from '@material-ui/core'; 
-import useStyles from './styles';
-import CartItem from '../CartItem/CartItem';
+import useStyles from './CartStyle';
+import Loading from '../Loading'
+import CartItem from './CartItem';
 import { Link } from 'react-router-dom';
 
 const Cart = ({ cart, onAddToCartQty, onRemoveCart, onEmptyCart }) => {
@@ -13,41 +14,46 @@ const Cart = ({ cart, onAddToCartQty, onRemoveCart, onEmptyCart }) => {
         </Typography>
 
         <Typography>
-        <Link to='/products' className={classes.link}>Start adding some products!</Link>
+        <Link to='/allproducts' className={classes.link}>Start adding some products!</Link>
         </Typography>
       </>
     )
 
     const FilledCart = () => (
         <>
-        <Grid container spacing={3}>
-            {cart.line_items.map(item => (
-                    <Grid item xs={12} sm={4} lg={3} key={item.id}>
-                        <CartItem item={item} onAddToCartQty={onAddToCartQty} onRemoveCart={onRemoveCart} />
-                    </Grid>
-            ))}
-        </Grid>
+            <Grid container spacing={10}>
+                {cart.line_items.map(item => (
+                        <Grid item xs={12} sm={4} lg={3} key={item.id}>
+                            <CartItem item={item} onAddToCartQty={onAddToCartQty} onRemoveCart={onRemoveCart} />
+                        </Grid>
+                ))}
+            </Grid>
 
-        <div className={classes.cardDetails}>
-            <Typography variant="h4">
-                Subtotal: {cart.subtotal.formatted_with_symbol} 
-            </Typography>
-            <div>
-                <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={onEmptyCart}>Empty Card</Button>
-                <Button component={Link} to='/checkout' className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Checkout</Button>
+            <div className={classes.cardDetails}>
+                <Typography variant="h4">
+                    Subtotal: {cart.subtotal.formatted_with_symbol} 
+                </Typography>
+                <div>
+                    <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={onEmptyCart}>Empty Card</Button>
+                    <Button component={Link} to='/checkout' className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Checkout</Button>
+                </div>
             </div>
-
-        </div>
         </> 
     )
         
-    if(!cart.line_items ) { return (<h1>Loading ...</h1>)}
+    if(!cart.line_items ) {
+      return (
+        <div className='loading'>
+            <h1 className='loading-title'>Loading ...</h1>
+            <Loading />
+        </div>
+      )}
 
     else {
     return (
-        <Container>
+        <Container style={{marginBottom: 20}}>
             <div className={classes.toolbar} />
-            <Typography className={classes.title} variant="h3" gutterBottom>Your Shopping Cart</Typography>
+            <Typography className={classes.title} variant="h3">Your Shopping Cart</Typography>
              { !cart.line_items.length ? <EmptyCart />  : <FilledCart /> } 
         </Container>
     )

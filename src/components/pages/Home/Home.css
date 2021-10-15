@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&family=Quicksand:wght@100&wght@300&display=swap');
+
+@font-face {
+    font-family: "Amsterdam-Two";
+    src: url('https://res.cloudinary.com/plvtinum/raw/upload/v1631978702/ecommerce/amsterdam-two-ttf_rjopzu.ttf')
+      format("truetype");
+}
+
+.my-heading {
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+    margin-top: -10px;
+}
+
+.featured-title {
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'QuickSand', sans-serif;
+    color: rgba(12, 1, 1, 0.822);
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+
+.line {
+    width: 180px;
+    border: 1px solid black;
+    margin-left: 2.3rem;
+    margin-right: 2.3rem;
+    margin-top: 10px;
+    transition: 0.3s ease-out;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.buy-btn {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #252525;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    margin: 10px;
+    margin-left: 30px;
+    box-sizing: 2px 2px 30px rgba(0, 0, 0, 0.2);
+}
+
+.buy-btn:hover {
+    color: black;
+    background-color: #F7EDE3;
+    transition: all ease 0.4s;
+}

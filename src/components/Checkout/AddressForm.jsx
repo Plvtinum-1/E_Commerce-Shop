@@ -38,7 +38,7 @@ const AddressForm = ({ checkoutToken, next }) => {
 
     useEffect(() => {
         fetchShippingCountries(checkoutToken.id) 
-    }, [])
+    }, [checkoutToken.id])
 
      useEffect(() => {
        if(shippingCountry) { return fetchSubdivisions(shippingCountry) }
@@ -46,7 +46,7 @@ const AddressForm = ({ checkoutToken, next }) => {
 
      useEffect(() => {
         if(shippingSubdivision) { return fetchShippingOptions(checkoutToken.id, shippingCountry, shippingSubdivision) }
-      }, [shippingSubdivision])
+      }, [shippingSubdivision, checkoutToken.id, shippingCountry])
 
 
     const myCountries = Object.entries(shippingCountries).map(([code, name]) => ({id: code, label: name}));
@@ -59,7 +59,7 @@ const AddressForm = ({ checkoutToken, next }) => {
         <>
           <Typography variant='h6' gutterBottom>Shipping Address</Typography>
           <FormProvider { ...methods }>
-            <form onSubmit={methods.handleSubmit(data => next({ ... data, shippingCountry, shippingSubdivision }))}>
+            <form onSubmit={methods.handleSubmit(data => next({ ...data, shippingCountry, shippingSubdivision }))}>
                 <Grid container spacing={4}>
 
                     <CustomTextField name='firstName' label='First Name' />

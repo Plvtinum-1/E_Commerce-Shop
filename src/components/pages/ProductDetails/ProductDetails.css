@@ -1,0 +1,77 @@
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 400px;
+}
+
+.loading-title {
+    padding: 10px;
+    margin: 80px;
+}
+
+.container {
+    height: 80vh;
+}
+
+.p-cont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.p-body {
+    margin: 10px;
+}
+
+.carousel .i-carousel{
+    width: 750px;
+    height: 500px;
+    object-fit: cover;
+    top: 50%;
+    bottom: 50%;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+}
+
+.p-one-button {
+    margin: 10px;
+}
+
+.p-one-body {
+    margin: 65px 10px;
+    margin-left: 25px;
+}
+
+.p-one-title, .p-one-price  {
+    margin: 10px;
+}
+
+.p-one-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-one-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    color: #000;
+}

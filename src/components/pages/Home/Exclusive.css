@@ -1,0 +1,87 @@
+.offer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+}
+
+.my-row {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.my-row .review {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    padding: 40px 0;
+    margin: 15px;
+}
+
+.column-2 .c-h4, .c-h1 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.column-2 .c-p {
+    font-weight: 800;
+    width: 400px;
+
+}
+
+.column-2 .c-img {
+    width: 80%;
+    margin: 30px;
+    border-radius: 15px;
+    
+}
+
+.column-2 .c-h1 {
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 38px;
+}
+
+.column-2 .c-h1,.c-h4,.c-p {
+    margin: 40px;
+}
+
+@media screen and (max-width: 860px) {
+    .my-row {
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .column-2 .c-img {
+        width: 300px;
+        margin: 20px;
+        border-radius: 15px;       
+    }
+
+    .column-2 .c-h4, .c-h1 {
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    .column-2 .c-h1 {
+        font-family: 'Fredoka One', sans-serif;
+        font-size: 24px;
+    }
+    
+    .column-2 .c-p {
+        font-weight: 400;
+        width: 180px;
+    
+    }
+
+}

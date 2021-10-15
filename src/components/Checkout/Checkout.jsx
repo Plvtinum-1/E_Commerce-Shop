@@ -1,5 +1,5 @@
 import { commerce } from '../../lib/commerce';
-import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core';
+import { Paper, Stepper, Step, StepLabel, Typography } from '@material-ui/core';
 import { useState, useEffect } from 'react';
 import useStyles from './styles';
 import AddressForm from './AddressForm';
