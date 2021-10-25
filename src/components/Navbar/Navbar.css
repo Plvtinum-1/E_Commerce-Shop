@@ -19,6 +19,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-left: 15px;
+}
+
+.MuiBadge-root {
+    margin-top: -15px;
 }
 
 .navbar-container {
@@ -37,7 +42,7 @@
     margin-left: auto;
     padding-right: 50px;
     padding-left: 50px;
-  }
+}
 
 .nav-menu { 
     display: flex;
@@ -58,79 +63,16 @@
 .nav-item:hover {
     border-bottom: 2px solid #fff;
     letter-spacing: 3px;
-  }
+}
 
 .m-nav-links {
     color: #fff;
     display: flex;
     align-items: center;
     text-decoration: none;
-    /* padding: 1.5rem 2rem; */
     height: 100%;
-  }
-
-@media screen and (max-width: 960px) {
-
-  .nav-menu {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 100%;
-        height: 90vh;
-        position: absolute;
-        top: 90px;
-        left: -100%;
-        opacity: 1;
-        transition: all 0.5s ease;
-    }    
-
-    .nav-menu.active {
-        background: #F7EDE3;
-        left: 0;
-        opacity: 1.2;
-        transition: all 0.6s ease;
-        z-index: 1;
-    }
-
-    .m-nav-links {   
-        text-align: center;  
-        width: 30%;
-        display: table;
-    }
-
-    .nav-item {
-        color: #212529;
-        padding: 1rem;
-        margin: 100px;
-    }
-
-    .nav-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 60%;
-        height: 60px;
-      }
-
-    .line {
-        width: 80px;
-    }
-
-    .nav-con {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .cart-icon {
-        margin-bottom: 8px !important;
-        margin-left: 8rem !important;
-    }
-
 }
-
+ 
 .nav-title {
     font-size: 24px;
     font-family: 'Amsterdam-Two', sans-serif;
@@ -140,7 +82,7 @@
 .nav-title:hover {
     letter-spacing: 3px;
     color: white;
-  }
+}
 
 .nav-con {
     display: flex;
@@ -153,3 +95,66 @@
     margin-bottom: 1.2rem;
     margin-left: 10px;
 }
+
+
+
+@media screen and (max-width: 960px) {
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        height: 90vh;
+        position: absolute;
+        top: 90px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }    
+  
+    .nav-menu.active {
+        background: #F7EDE3;
+        left: 0;
+        opacity: 1.2;
+        transition: all 0.6s ease;
+        z-index: 1;
+    }
+  
+    .m-nav-links {   
+        text-align: center;  
+        width: 30%;
+        display: table;
+    }
+  
+    .nav-item {
+        color: #212529;
+        padding: 1rem;
+        margin: 100px;
+    }
+  
+      .nav-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 60%;
+          height: 60px;
+        }
+  
+      .line {
+          width: 80px;
+      }
+  
+      .nav-con {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+      }
+      
+      .MuiBadge-root {
+        margin-top: 0px;
+    }
+  
+  }

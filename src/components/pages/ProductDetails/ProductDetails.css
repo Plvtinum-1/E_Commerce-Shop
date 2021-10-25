@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: 400px;
+    margin-bottom: 520px;
 }
 
 .loading-title {
@@ -23,22 +23,23 @@
 }
 
 .p-body {
-    margin: 10px;
+    margin: 20px;
+    width: 100%;
 }
 
-.carousel .i-carousel{
-    width: 750px;
-    height: 500px;
+.carousel .carousel-i{
+    margin-top: 15px;
+    max-width: 656px;
+    max-height: 856px;
     object-fit: cover;
     top: 50%;
-    bottom: 50%;
 }
 
 .carousel {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%; 
+    
 }
 
 .p-one-button {
@@ -74,4 +75,44 @@ a {
 
 a:hover {
     color: #000;
+}
+
+@media screen and (max-width: 974px) {
+    .carousel img{
+        min-width: 556px;
+        object-fit: cover;
+        top: 50%;
+    }
+
+    .p-cont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .p-one-elements {
+        margin-bottom: 0px;
+    }
+
+    .buy-btn {
+       margin-bottom: 20px;
+    }
+
+    .p-one-buttons {
+        margin-bottom: 20px;
+    }
+
+    .carousel .carousel-i{
+        margin-top: 15px;
+        max-width: 556px;
+        max-height: 456px;
+        object-fit: cover;
+        top: 50%;
+    }
+    .p-one-body {
+        margin: 30px;
+        text-align: center;
+    }
+
 }

@@ -6,13 +6,13 @@ import Exclusive from './Exclusive';
 import AboutSection from './AboutSection';
 import './Home.css';
 
-const Home = () => {
+const Home = ({ products, onAddToCart }) => {
     return (
         <>
             <BCarousel />
-            <BestSellers />
+            <BestSellers products={products} />
             <Exclusive />
-            <FeaturedProducts />
+            <FeaturedProducts onAddToCart={onAddToCart} products={products} />
             <AboutSection />
             <Testimonials />
         </>

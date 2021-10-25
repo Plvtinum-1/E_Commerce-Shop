@@ -11,9 +11,6 @@
    display: flex;
    width: 100%;
    min-width: 800px;
-   /* position: relative; */
-   /* top: 50%;
-   left: 50%; */
    bottom: 120px; 
    z-index: -99; 
 }
@@ -39,7 +36,7 @@
     left: 0;
 }
 
-.ab-section:hover .overlay {
+.ab-section .overlay {
     width: 100%;
     opacity: 0.6;
 }
@@ -54,7 +51,6 @@
 .ab-item {
      margin: 70px; 
      font-weight: 600;
-  /* max-width: 400px; */
 }
 
 .ab-text {

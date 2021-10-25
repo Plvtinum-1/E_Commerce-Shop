@@ -1,11 +1,9 @@
 import React from 'react';
-import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@material-ui/core'
-import useStyles from './CartItemStyle'
+import { Button } from '@material-ui/core'
 import { Link } from 'react-router-dom';
 import './CartItem.css'
 
 function CartItem({ item, onAddToCartQty, onRemoveCart }) {
-    const classes = useStyles();
     console.log(item, 'item')
     return (
 

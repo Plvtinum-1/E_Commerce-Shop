@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
 import PageNotFound from '../PageNotFound/PageNotFound';
-import Loading from '../../Loading';
+import Loading from '../../Loading/Loading';
 import { Link } from 'react-router-dom';
 import './ProductDetails.css'
 
@@ -9,7 +9,6 @@ const ProductDetails = ({ products, onAddToCart }) => {
     
     let myId = useParams().id
     const OneProduct = products.filter(product => product.id === myId)[0]
-
 
     if(products.length === 0 && !OneProduct) 
     return(
@@ -25,7 +24,7 @@ const ProductDetails = ({ products, onAddToCart }) => {
     return (
        <div className='container p-cont'>
            <div className="carousel">
-               <img className='i-carousel' src={OneProduct.image.url} alt="" />
+               <img className='carousel-i' src={OneProduct.image.url} alt="" />
            </div>  
            <div className="p-body">
                <div className="p-one-elements">   

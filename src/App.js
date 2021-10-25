@@ -1,29 +1,19 @@
 import { useState, useEffect } from 'react';
-import './App.css'
-import { Products, Cart, Checkout, Home, Navbar } from './components';
-import ProductDetails from './components/pages/ProductDetails/ProductDetails'
+import { AllProducts, Cart, Checkout, Footer, Navbar } from './components';
+import { About, Contact, Home, PageNotFound, ProductDetails } from './components/pages';
 import { commerce } from './lib/commerce';
 import { Switch, Route } from 'react-router-dom';
-import Footer from './components/Footer/Footer'
-import AllProducts from './components/pages/AllProducts/AllProducts';
-import PageNotFound from './components/pages/PageNotFound/PageNotFound';
-
+import './App.css'
 
   const App = () => {
     
     const [ products, setProducts ] = useState([]);
     const [ categories, setCategories ] = useState([]);
     const [ cart, setCart ] = useState({});
-    const [ pro, setPro ] = useState({});
 
     const fetchProducts = async () => {
       const response = await commerce.products.list();
        setProducts(response.data);
-    }
-
-    const catego = async () => {
-      const prod = await commerce.products.list({ limit: 40 });
-      setPro(prod)
     }
 
     const fetchByCategory = async () => {
@@ -76,7 +66,6 @@ import PageNotFound from './components/pages/PageNotFound/PageNotFound';
         fetchProducts();
         fetchByCategory();
         fetchCart();
-        catego();
     }, [])
     
 
@@ -86,11 +75,7 @@ import PageNotFound from './components/pages/PageNotFound/PageNotFound';
 
             <Switch>
               <Route exact path='/'>
-                <Home totalItems={cart.total_items} onAddToCart={handleAddToCart} /> 
-              </Route>
-
-              <Route path='/products'>
-                <Products categories={categories} products={products} onAddToCart={handleAddToCart} />
+                <Home products={products} totalItems={cart.total_items} onAddToCart={handleAddToCart} /> 
               </Route>
 
               <Route path='/allproducts'>
@@ -106,23 +91,22 @@ import PageNotFound from './components/pages/PageNotFound/PageNotFound';
               </Route>
 
               <Route path='/contact'>
-                <h1>Contact Us</h1>
+                <Contact />
               </Route>
 
               <Route path='/about'>
-                <h1>About Us</h1>
-              </Route>
-
-              <Route path='/404'>
-                <PageNotFound />
+                <About />
               </Route>
 
               <Route path='/productdetails/:id'> 
                 <ProductDetails onAddToCart={handleAddToCart} products={products} />
               </Route>
 
+              <Route path='*'> 
+                <PageNotFound />
+              </Route>
             </Switch>
-
+            
             <Footer products={products} />
               
         </> 

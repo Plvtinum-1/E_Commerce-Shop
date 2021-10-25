@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Typography, Button, Grid } from '@material-ui/core'; 
 import useStyles from './CartStyle';
-import Loading from '../Loading'
+import Loading from '../Loading/Loading'
 import CartItem from './CartItem';
 import { Link } from 'react-router-dom';
 

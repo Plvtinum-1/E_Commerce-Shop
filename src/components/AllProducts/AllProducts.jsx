@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Loading from '../../Loading';
+import Loading from '../Loading/Loading';
 
 import './AllProducts.css';
 
@@ -47,7 +47,7 @@ const AllProducts = ({ onAddToCart, products, categories }) => {
                 <Grid container spacing={2}>
                     
                     {products.map(product => (
-                        <Grid item xs={12} sm={4} lg={3} key={product.id}>
+                        <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
                           
                             <div className="box-container">
                                 <div className='my-box'>
