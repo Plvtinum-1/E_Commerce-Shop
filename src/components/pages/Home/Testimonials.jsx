@@ -5,12 +5,11 @@ import './Testimonials.css'
 const Testimonials = () => {
     return (
         <>
-         <div className='all-div'>
+        <div className="con">
             <div className='my-heading'> 
-                <h1 className='featured-title' style={{marginTop: 20}}>Testimonials</h1>
+                <h1 className='featured-title'>Testimonials</h1>
                 <hr className='line' />
              </div> 
-
 
             <div className="testimonials">
                 <div className="small-container">
@@ -58,7 +57,7 @@ const Testimonials = () => {
                     </div>
                 </div>
             </div>
-          </div>   
+        </div>
         </>
     )
 }

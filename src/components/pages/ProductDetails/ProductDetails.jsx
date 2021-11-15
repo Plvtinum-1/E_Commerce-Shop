@@ -5,12 +5,12 @@ import Loading from '../../Loading/Loading';
 import { Link } from 'react-router-dom';
 import './ProductDetails.css'
 
-const ProductDetails = ({ products, onAddToCart }) => {
+const ProductDetails = ({ categories, products, onAddToCart }) => {
     
     let myId = useParams().id
     const OneProduct = products.filter(product => product.id === myId)[0]
 
-    if(products.length === 0 && !OneProduct) 
+    if(products.length === 0) 
     return(
        <> 
         <div className='loading'>
@@ -20,7 +20,7 @@ const ProductDetails = ({ products, onAddToCart }) => {
       </>
     )
 
-    else if(products && OneProduct)
+    else if(products)
     return (
        <div className='container p-cont'>
            <div className="carousel">

@@ -16,17 +16,26 @@ const AllProducts = ({ onAddToCart, products, categories }) => {
                 <h1 className='p-heading'>{filter}</h1> 
                 
                 <div className="p-elements">
-                        <button className='p-btn' onClick={e => setFilter(e.target.innerText)}>
+                        <button className='p-btn' onClick={() => setFilter("All Products")}>
                             All Products
-                        </button>
-
-                   { categories.map(category => (
-                        <>   
-                            <button onClick={e => setFilter(e.target.innerText)} className='p-btn'>
-                                {category.name}
-                            </button>      
-                        </>  
-                     )) }    
+                            <span className='s-icon'><img className='ic' src="https://res.cloudinary.com/plvtinum/image/upload/v1636988922/ecommerce/items_qxp5mg.png" alt="" /></span>
+                        </button> 
+                        <button onClick={() => setFilter('Potted Plants')} className='p-btn'>
+                             Potted Plants
+                             <span><img className='ic' src="https://res.cloudinary.com/plvtinum/image/upload/v1636988922/ecommerce/plant_zot1go.png" alt="" /></span>
+                        </button>    
+                        <button onClick={() => setFilter('Headphones')} className='p-btn'>
+                             Headphones
+                             <span><img className='ic' src="https://res.cloudinary.com/plvtinum/image/upload/v1636988922/ecommerce/headphones_fu2ats.png" alt="" /></span>
+                        </button> 
+                        <button onClick={() => setFilter('Watches')} className='p-btn'>
+                             Watches
+                             <span><img className='ic' src="https://res.cloudinary.com/plvtinum/image/upload/v1636988922/ecommerce/watch_uyv9yy.png" alt="" /></span>
+                        </button> 
+                        <button onClick={() => setFilter('Shoes')} className='p-btn'>
+                             Shoes
+                             <span><img className='ic' src="https://res.cloudinary.com/plvtinum/image/upload/v1636988922/ecommerce/sneakers_zzhl6c.png" alt="" /></span>
+                        </button>  
                 </div>
             </div>
 

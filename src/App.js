@@ -12,13 +12,13 @@ import './App.css'
     const [ cart, setCart ] = useState({});
 
     const fetchProducts = async () => {
-      const response = await commerce.products.list();
+      const response = await commerce.products.list({limit: 100,});
        setProducts(response.data);
     }
-
+                    
     const fetchByCategory = async () => {
-      const { data: products } = await commerce.products.list({ limit: 40 });
-      const { data: catergoriesData } = await commerce.categories.list();
+      const { data: products } = await commerce.products.list({limit: 100,});
+      const { data: catergoriesData } = await commerce.categories.list({limit: 100,});
 
       const productsPerCategory = catergoriesData.reduce((acc, category) => {
         return [
@@ -35,7 +35,6 @@ import './App.css'
 
       setCategories(productsPerCategory);
     }
-  
 
     const fetchCart = async () => {
         const cart = await commerce.cart.retrieve();
@@ -99,7 +98,7 @@ import './App.css'
               </Route>
 
               <Route path='/productdetails/:id'> 
-                <ProductDetails onAddToCart={handleAddToCart} products={products} />
+                <ProductDetails categories={categories} onAddToCart={handleAddToCart} products={products} />
               </Route>
 
               <Route path='*'> 

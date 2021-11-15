@@ -1,9 +1,19 @@
 .p-heading {
     display: flex;
+    font-family: 'Abril Fatface', sans-serif;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 40px;
+}
+
+.ic {
+    width: 45px;
+    padding: 3px;
+}
+
+.s-icon {
+    margin: 10px;
 }
 
 .p-btn {
@@ -12,12 +22,11 @@
     margin: 10px;
     background-color: #fff;
     transition: 0.5s ease-in-out;
+    font-family: 'Poppins', sans-serif;
 
 }
 .p-btn:hover {
-    background-color: #F7EDE3;
-    font-weight: 500;
-    
+    background-color: #f06c79;   
 }
 
 .p-title {
