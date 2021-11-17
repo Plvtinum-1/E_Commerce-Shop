@@ -3,20 +3,28 @@ import './About.css'
 
 const About = () => {
     return (
-
-        <div className='ab-section' style={{height: '70%'}}>
-            <img src="https://res.cloudinary.com/plvtinum/image/upload/v1633436672/ecommerce/anthony-esau-N2zk9yXjmLA-unsplash_s6hwwh.jpg" alt="" />
-            <div className="overlay overlayFade">
-                <div className='ab-content'>
-                    <p className='ab-item'>About</p>
-                    <h1 className='ab-title' style={{fontSize: 30}}>Women Souk</h1>
-                    <p className='ab-text'>Born out of a shared love of good design & quality products, we create considered solutions fit for the modern lifestyle. Always driven by passion, we work to empower others to live the same way.</p>
-                    <p className="ab-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid repellendus beatae consequatur vero delectus accusantium eaque nam expedita quis, exercitationem iste vitae iure suscipit hic fuga laboriosam natus itaque deleniti?</p>
-                    <p className="ab-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid repellendus beatae consequatur vero delectus accusantium eaque nam expedita quis, exercitationem iste vitae iure suscipit hic fuga laboriosam natus itaque deleniti?</p>
-                    <p className="ab-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid repellendus beatae consequatur vero delectus accusantium eaque nam expedita quis, exercitationem iste vitae iure suscipit hic fuga laboriosam natus itaque deleniti?</p>
-                </div> 
-            </div>             
+        <>
+        <div className='ab-section'>
+            <img className='ab-background' src="https://res.cloudinary.com/plvtinum/image/upload/v1637072287/ecommerce/wave-haikei_qycpqu.svg" alt="" />
+            <img className='ab-background' src="https://res.cloudinary.com/plvtinum/image/upload/v1637072376/ecommerce/wave-haikei2_n3e6an.svg" alt="" />
+            <h1 className='ab-title'>About Us</h1>
+            <div className="contain-ab-image">
+              <img className='ab-image' src="https://res.cloudinary.com/plvtinum/image/upload/v1637060290/ecommerce/undraw_team_sosmqa.svg" alt="" />
+            </div>
+            <div className='ab-content'>
+                <p className='ab-text'><span className='ab-s'>Women Souk</span> is Born out of a shared love of good design & quality products, we create considered solutions fit for the modern lifestyle. Always driven by passion, we work to empower others to live the same way.</p>
+                <p className="ab-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid repellendus beatae consequatur vero delectus accusantium eaque nam expedita quis, exercitationem iste vitae iure suscipit hic fuga laboriosam natus itaque deleniti?</p>
+            </div> 
+            <div className="contain-ab-image">
+              {/* <img className='ab-image' src="https://res.cloudinary.com/plvtinum/image/upload/v1637060245/ecommerce/undraw_about_yif0db.svg" alt="" />             */}
+              <img className='ab-image' src="https://res.cloudinary.com/plvtinum/image/upload/v1637060245/ecommerce/undraw_team_re__bm2m7q.svg" alt="" /> 
+            </div>
+            <div className="ab-content">
+                <p className='ab-text'>We have a really dedicated team that work hard to provide the best user experience and choose the best products to display.</p> 
+                <p className='ab-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, a laborum maxime voluptatibus mollitia rerum sapiente dolorem repellat odio architecto assumenda nemo sunt, rem facilis possimus? Quasi veritatis distinctio est!</p> 
+            </div>
         </div>
+        </>
     )
 }
 

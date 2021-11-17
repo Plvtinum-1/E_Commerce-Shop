@@ -98,7 +98,7 @@ import './App.css'
               </Route>
 
               <Route path='/productdetails/:id'> 
-                <ProductDetails categories={categories} onAddToCart={handleAddToCart} products={products} />
+                <ProductDetails cart={cart} onAddToCartQty={handleUpdateCartQty}  onAddToCart={handleAddToCart} products={products} />
               </Route>
 
               <Route path='*'> 

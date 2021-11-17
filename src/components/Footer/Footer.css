@@ -1,6 +1,7 @@
 .m-footer {
     background-color: #212529;
     margin-top: auto;
+    z-index: 2;
 }
 
 .nav-i {

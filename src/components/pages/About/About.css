@@ -1,1 +1,49 @@
+.ab-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
 
+.contain-ab-image {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 600px;
+}
+
+.ab-image {
+    width: 100%;
+}
+
+.ab-title {
+    margin-top: 20px;
+    font-family: 'Abril Fatface', sans-serif; 
+}
+
+.ab-content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ab-text {
+    width: 600px;
+}
+
+.ab-s {
+    font-family: 'Amsterdam-Two', sans-serif;
+    font-size: 20px;
+}
+
+.ab-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0px;
+}

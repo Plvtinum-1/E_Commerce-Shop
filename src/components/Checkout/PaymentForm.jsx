@@ -1,11 +1,11 @@
 import { Typography, Button, Divider } from '@material-ui/core';
-import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
+// import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 // import { Link } from 'react-router-dom'
 import { PayPalButton } from "react-paypal-button-v2";
 import Review from './Review';
 
-const stripePromise = loadStripe('...');
+// const stripePromise = loadStripe('...');
 
 const PaymentForm = ({ checkoutToken, backStep }) => {
    const token = () => (console.log(checkoutToken)) 
@@ -15,7 +15,7 @@ const PaymentForm = ({ checkoutToken, backStep }) => {
           <Review checkoutToken={checkoutToken} />  
           <Divider />
           <Typography variant='h5' style={{ margin: '20px 0', textAlign: 'center' }} gutterBottom>Payment Methods</Typography>
-          <Typography variant='h6' style={{ margin: '20px 0' }} gutterBottom>Pay With Stripe</Typography>
+          {/* <Typography variant='h6' style={{ margin: '20px 0' }} gutterBottom>Pay With Stripe</Typography>
           <Elements stripe={stripePromise}>
               <ElementsConsumer>
                   {({ elements, stripe }) => (
@@ -29,7 +29,7 @@ const PaymentForm = ({ checkoutToken, backStep }) => {
                   )}
                   
                 </ElementsConsumer>
-          </Elements>
+          </Elements> */}
           <Typography variant='h6' style={{ margin: '20px 0' }} gutterBottom>Pay With Paypal</Typography>
 
                 <PayPalButton

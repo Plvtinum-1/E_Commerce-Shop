@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './CartItem.css'
 
 function CartItem({ item, onAddToCartQty, onRemoveCart }) {
-    console.log(item, 'item')
     return (
 
             <div className='my-box'>

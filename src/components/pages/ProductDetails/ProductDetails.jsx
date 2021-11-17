@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Loading from '../../Loading/Loading';
 import { Link } from 'react-router-dom';
-import './ProductDetails.css'
+import { Button } from '@material-ui/core'
+import './ProductDetails.css';
 
-const ProductDetails = ({ categories, products, onAddToCart }) => {
-    
-    let myId = useParams().id
-    const OneProduct = products.filter(product => product.id === myId)[0]
+const ProductDetails = ({ products, onAddToCart }) => {
 
+    const [quantity, setQuantity] = useState(0);
+    const [index, setIndex] = useState(0);
+    const myId = useParams().id;
+    const oneProduct = products.filter(product => product.id === myId)[0]
+    console.log('one', oneProduct)
+    console.log('index', index)
     if(products.length === 0) 
     return(
        <> 
@@ -22,23 +26,67 @@ const ProductDetails = ({ categories, products, onAddToCart }) => {
 
     else if(products)
     return (
-       <div className='container p-cont'>
-           <div className="carousel">
-               <img className='carousel-i' src={OneProduct.image.url} alt="" />
-           </div>  
-           <div className="p-body">
-               <div className="p-one-elements">   
-                    <h1 className='p-one-title'>{OneProduct.name}</h1>    
-                    <h3 className='p-one-price'>{OneProduct.price.formatted_with_symbol}</h3> 
-                    {/* <p className='p-one-body' dangerouslySetInnerHTML={{__html: OneProduct.description}} /> */}
-                    <p className='p-one-body'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                </div>  
-                
-                <div className="p-one-buttons">
-                    <button onClick={() => onAddToCart(OneProduct.id, 1)} className='p-one-button buy-btn'>Add To Cart</button>
-                    <button onClick={() => onAddToCart(OneProduct.id, 1)} className='p-one-button buy-btn'><Link to={`/cart`}>Buy Now</Link></button>
+       <div className='product-details'>
+           <div className="product-carousel">
+                {oneProduct.assets.map((img, i) => (
+                  <div className={index === i ? 'big-images animation' : 'big-images'}>
+                    <img className='carousel-img' src={oneProduct.assets[i].url} alt="" /> 
+                  </div>
+                ))}
+               
+                <div className="little-images">
+                    {oneProduct.assets.map((img, i) => (
+                        <img 
+                         key={i} 
+                         onClick={
+                            () => {
+                             setIndex(i)
+                            }
+                          } 
+                         className={index === i ? 'images activ' : 'images'}
+                         src={img.url} 
+                         alt=""  
+                        />     
+                    ))}
                 </div>
-             
+           </div>  
+           <div className="product-body">
+               <div className="product-body-elements">   
+                    <h1 className='p-title'>{oneProduct.name}</h1>    
+                    <p className='p-body'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    {/* <p className='p-one-body' dangerouslySetInnerHTML={{__html: OneProduct.description}} /> */}
+                </div>
+               <div className="combine">
+                    <h3 className='p-price'>{oneProduct.price.formatted_with_symbol}</h3> 
+
+                    <div className="cart-combine">
+                        <Button className='operators' 
+                          type="button" 
+                          size="large" 
+                          onClick={
+                            () => setQuantity(quantity > 0 ? quantity - 1 : 0)
+                          }
+                        >
+                        -
+                        </Button>
+                        <h4>{quantity}</h4>
+                        <Button 
+                          className='operators' 
+                          type="button" 
+                          size="large" 
+                          onClick={
+                             () => setQuantity(quantity + 1)
+                            }
+                        >
+                        +
+                        </Button>
+                    </div>
+               </div>
+            
+                <div className="p-buttons">
+                    <button onClick={() => onAddToCart(oneProduct.id, quantity)} className='p-button-f buy-btn'>Add To Cart</button>
+                    <button onClick={() => onAddToCart(oneProduct.id, 1)} className='p-button buy-btn'><Link to={`/cart`}>Buy Now</Link></button>
+                </div>
            </div>
          
        </div> 

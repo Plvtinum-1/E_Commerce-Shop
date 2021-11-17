@@ -1,5 +1,6 @@
 import React from 'react'
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-bootstrap/Carousel';
+import './carousel.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const BCarousel = () => {
@@ -12,8 +13,8 @@ const BCarousel = () => {
                 src="https://res.cloudinary.com/plvtinum/image/upload/v1636988342/ecommerce/second_i9nrkv.png"
                 alt="Forth slide"
                 />
-                 <button className='buy-btn' style={{position: 'absolute', bottom: 120, left: 340}}><a href='/productdetails/prod_4OANwRGKJqovYL'>Shop Now</a></button>
-                <Carousel.Caption>
+                <Carousel.Caption className='cs' style={{position: 'absolute', bottom: '3%', left: '17.5%'}}>
+                 <button className='buy-btn'><a className='a-btn' href='/productdetails/prod_4OANwRGKJqovYL'>Shop Now</a></button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -22,8 +23,8 @@ const BCarousel = () => {
                 src="https://res.cloudinary.com/plvtinum/image/upload/v1636987979/ecommerce/4739087_r1jznw.png"
                 alt="Third slide"
                 />
-                 <button className='buy-btn' style={{position: 'absolute', bottom: 150, right: 400}}><a href='/productdetails/prod_zkK6oL90nK5Xn0'>Shop Now</a></button>
-                <Carousel.Caption>
+                <Carousel.Caption style={{position: 'absolute', bottom: '20%', left: '60.5%'}}>
+                 <button className='buy-btn'><a className='a-btn' href='/productdetails/prod_zkK6oL90nK5Xn0'>Shop Now</a></button>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>  
