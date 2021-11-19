@@ -36,3 +36,9 @@
     /* margin-top: 60px; */
     margin-bottom: 60px;
 }
+
+@media screen and (max-width: 660px) {
+    .cont-img {
+        width: 450px;
+    }
+}

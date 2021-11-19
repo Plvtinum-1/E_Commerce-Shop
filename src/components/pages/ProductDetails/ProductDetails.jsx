@@ -12,8 +12,6 @@ const ProductDetails = ({ products, onAddToCart }) => {
     const [index, setIndex] = useState(0);
     const myId = useParams().id;
     const oneProduct = products.filter(product => product.id === myId)[0]
-    console.log('one', oneProduct)
-    console.log('index', index)
     if(products.length === 0) 
     return(
        <> 
@@ -33,8 +31,7 @@ const ProductDetails = ({ products, onAddToCart }) => {
                     <img className='carousel-img' src={oneProduct.assets[i].url} alt="" /> 
                   </div>
                 ))}
-               
-                <div className="little-images">
+                <div className="small-images">
                     {oneProduct.assets.map((img, i) => (
                         <img 
                          key={i} 
@@ -58,7 +55,6 @@ const ProductDetails = ({ products, onAddToCart }) => {
                 </div>
                <div className="combine">
                     <h3 className='p-price'>{oneProduct.price.formatted_with_symbol}</h3> 
-
                     <div className="cart-combine">
                         <Button className='operators' 
                           type="button" 

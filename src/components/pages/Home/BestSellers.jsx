@@ -23,7 +23,7 @@ const BestSellers = ({ products }) => {
                         </div>
                         <div className="content">
                             <h4 className='bs-title'>{item.name}</h4>
-                            <p dangerouslySetInnerHTML={{__html: item.description}} />
+                            {/* <p dangerouslySetInnerHTML={{__html: item.description}} /> */}
                             <p className='bs-body'>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, voluptatum? Voluptatibus totam culpa velit. Atque est adipisci eaque sunt, maiores commodi maxime repudiandae? Sunt aspernatur delectus nobis veritatis eaque magnam?
                             </p>

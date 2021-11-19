@@ -22,7 +22,9 @@
 
 .bs-title {
     margin-top: 5px;
+    font-size: 28px;
     margin-bottom: 20px;
+    font-family: 'Abril Fatface', sans-serif;
 }
 
 .small-container {
@@ -51,7 +53,6 @@
     flex-direction: column;
     background: #fff;
     margin: 20px 20px;
-    /* padding: 10px 5px; */
     position: relative;
     max-width: 415px; 
     height: 300px;
@@ -62,23 +63,22 @@
 .categories-row .card:hover {
     height: 680px;
 }
+
 .categories-row .card .imgBs {
     position: relative;
     max-width: 415px;
     max-height: 500px;
     top: -80px;
-    /* left: 10px; */
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
 }
 
 .first-title {
-    margin-top: 20px !important;
+    margin-top: 20px;
 }
 
 .categories-row .card .content {
     position: relative;
     margin-top: -150px;
-    /* padding: 10px 15px; */
     text-align: center;
     color: #111;
     visibility: hidden;
@@ -90,7 +90,7 @@
     visibility: visible;
     opacity: 1;
     margin-top: -20px;
-    transition-delay: 0.5s ease-in-out;
+    transition-delay: 0.3s ease;
 }
 
 .bs-btn {

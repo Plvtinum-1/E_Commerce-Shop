@@ -50,12 +50,16 @@
     border-radius: 30px;
 }
 
-.little-images {
-    width: 400px;
+.small-images {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 220px;
+    left: 0px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 .images {
@@ -139,30 +143,65 @@ a:hover {
     justify-content: center;
 }
 
-@media screen and (max-width: 974px) {
-    .carousel-img {
-        min-width: 556px;
-        object-fit: cover;
-        top: 50%;
-    }
-
-    .p-cont {
+@media screen and (max-width: 1500px) {
+    .product-details{
+        height: 120vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
     }
 
-    .product-body-elements {
+    .product-carousel {
+        display: flex;
+        top: 50px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 300px;
+    }
+
+    .product-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .p-title {
+        position: absolute;
+        top: 90px;
+    }
+
+    .small-images {
+        left: 60px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .product-carousel {
+        width: 470px;
+    }
+    .small-images {
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 30px;
+    }
+    .images {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+
+    .p-body {
+        width: 400px;
+        margin-top: -70px;
         margin-bottom: 0px;
-    }
-
-    .buy-btn {
-       margin-bottom: 20px;
-    }
-
-    .p-buttons {
-        margin-bottom: 20px;
     }
 
 }
