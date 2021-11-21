@@ -1,20 +1,21 @@
+.cs2 {
+    position: 'absolute' !important;
+    bottom: 20% !important;
+    left: 60% !important;
+    right: 0px !important;
+}
+
 .cs {
-    position: 'absolute';
-    bottom: 15%;
-    right: 20%;
+    position: 'absolute' !important;
+    bottom: 0% !important;
+    left: 12% !important;
+    right: 0% !important;
 }
 
-.cs-2 {
-    position: 'absolute';
-    bottom: 8%;
-    left: 17.5%;
-}
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1250px) {
     .cs {
-        left: 10% !important;
-        bottom: 0% !important;
-        margin-left: -20px;
+        left: 13% !important;
     }
 }
 
@@ -26,15 +27,34 @@
     }
 
     .cs {
-        left: 15% !important;
+        left: 13% !important;
     }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 750px) {
     .cs {
-        left: 15% !important;
+        left: 16% !important;
     }
 }
+
+@media screen and (max-width: 550px) {
+    .cs .buy-btn {
+        width: 60px !important;
+        height: 30px !important;
+        font-size: 10px !important;
+        /* margin-left: 62px !important; */
+    }
+    .cs2 .buy-btn {
+        width: 60px !important;
+        height: 30px !important;
+        font-size: 10px !important;
+    }
+}
+
+
+
+
+
 
 
 

@@ -8,7 +8,7 @@ import './ProductDetails.css';
 
 const ProductDetails = ({ products, onAddToCart }) => {
 
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const [index, setIndex] = useState(0);
     const myId = useParams().id;
     const oneProduct = products.filter(product => product.id === myId)[0]
@@ -60,7 +60,7 @@ const ProductDetails = ({ products, onAddToCart }) => {
                           type="button" 
                           size="large" 
                           onClick={
-                            () => setQuantity(quantity > 0 ? quantity - 1 : 0)
+                            () => setQuantity(quantity > 1 ? quantity - 1 : 1)
                           }
                         >
                         -

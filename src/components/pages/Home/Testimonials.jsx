@@ -12,8 +12,6 @@ const Testimonials = () => {
              </div> 
 
             <div className="testimonials">
-                <div className="small-container">
-                    <div className="my-row">
                         <div className="review">
                            <img className='img-review' src="https://res.cloudinary.com/plvtinum/image/upload/v1632909671/ecommerce/1_vivays.jpg" alt="" />
                            <h3 className='title-review'>Ella</h3>
@@ -55,8 +53,6 @@ const Testimonials = () => {
                             {/* Rating */}  
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
         </>
     )
